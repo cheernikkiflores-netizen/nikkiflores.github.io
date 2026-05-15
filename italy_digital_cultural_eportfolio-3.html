@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italy: A Digital Cultural e-Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f8f4ec, #fffaf5);
+      color: #2e2e2e;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero {
+      max-width: 900px;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1b4332;
+      padding: 15px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #f4d35e;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.7rem;
+      color: #8b0000;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #1b4332;
+      font-size: 1.4rem;
+    }
+
+    .timeline {
+      border-left: 5px solid #8b0000;
+      margin-top: 40px;
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 5px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #f4d35e;
+      border: 3px solid #8b0000;
+    }
+
+    .facts {
+      background: linear-gradient(to right, #1b4332, #2d6a4f);
+      color: white;
+      border-radius: 25px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .facts ul {
+      padding-left: 20px;
+    }
+
+    .facts li {
+      margin-bottom: 12px;
+    }
+
+    .banner {
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .reflection {
+      background: white;
+      border-left: 8px solid #8b0000;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: #1b4332;
+      color: white;
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    .references {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .references a {
+      color: #8b0000;
+      word-break: break-word;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+
+    <div style="background:rgba(0,0,0,0.35); padding:45px 35px; border-radius:25px; backdrop-filter:blur(3px); box-shadow:0 10px 30px rgba(0,0,0,0.4); max-width:900px;">
+
+      <p style="font-size:1rem; letter-spacing:4px; color:#f4d35e; font-weight:600; margin-bottom:15px; text-transform:uppercase;">
+        The Contemporary World Final Project
+      </p>
+
+      <h1 style="font-size:5rem; font-weight:700; color:white; text-shadow:4px 4px 10px rgba(0,0,0,0.8); margin-bottom:10px; line-height:1;">
+        ITALY
+      </h1>
+
+      <p style="font-size:1.7rem; font-weight:600; color:white; letter-spacing:3px; margin-bottom:25px; text-shadow:2px 2px 8px rgba(0,0,0,0.7);">
+        Digital Cultural e-Portfolio
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-bottom:25px;">
+
+        <div style="background:rgba(255,255,255,0.15); padding:12px 22px; border-radius:50px; border:1px solid rgba(255,255,255,0.3);">
+          <span style="font-weight:700; color:#fff; font-size:1rem;">
+            1272 • 1st Year Financial Management Students
+          </span>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.15); padding:12px 22px; border-radius:50px; border:1px solid rgba(255,255,255,0.3);">
+          <span style="font-weight:700; color:#fff; font-size:1rem;">
+            Basmayor, Faith • Flores, Cheer Nikki • Manly, Chloe • Revina, Krizzle
+          </span>
+        </div>
+
+      </div>
+
+      <p style="font-size:1rem; max-width:720px; margin:auto; line-height:1.9; color:#f8f8f8; text-shadow:1px 1px 6px rgba(0,0,0,0.7);">
+        Exploring Italy’s rich culture, traditions, architecture, cuisine, and global influence through a creative digital cultural portfolio inspired by the beauty and elegance of Italy.
+      </p>
+
+    </div>
+
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#profile">Country Profile</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#global">Global Connections</a></li>
+    <li><a href="#issues">Issues & Challenges</a></li>
+    <li><a href="#reflection">Reflection</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+<section id="profile">
+  <h2>Country & Culture Profile</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?q=80&w=1200&auto=format&fit=crop" alt="Italy">
+      <div class="card-content">
+        <h3>About Italy</h3>
+        <p>
+          Italy is located in Southern Europe and is one of the most visited countries in the world. It is known for its artistic heritage, historical landmarks, delicious cuisine, and strong cultural traditions.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
+      <div class="card-content">
+        <h3>Quick Facts</h3>
+        <p>
+          Capital: Rome<br>
+          Population: Around 58 million<br>
+          Official Language: Italian<br>
+          Currency: Euro (€)
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Italy Map">
+      <div class="card-content">
+        <h3>Why We Chose Italy</h3>
+        <p>
+          We chose Italy because of its rich culture, world-famous art, beautiful architecture, and major influence on global traditions, fashion, and food.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <img class="banner" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1400&auto=format&fit=crop" alt="Italy Landscape">
+
+  <div class="facts">
+    <h3>Important Facts About Italy</h3>
+    <ul>
+      <li>Italy is home to the Roman Empire and the Renaissance.</li>
+      <li>Rome is called the “Eternal City.”</li>
+      <li>Italy has the most UNESCO World Heritage Sites in the world.</li>
+      <li>Italian cuisine is one of the most influential cuisines globally.</li>
+      <li>Tourism plays a huge role in the country’s economy.</li>
+    </ul>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>753 BCE – Founding of Rome</h3>
+      <p>According to legend, Rome was founded by Romulus and Remus, marking the beginning of one of history’s greatest civilizations.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>27 BCE – Roman Empire</h3>
+      <p>The Roman Empire became one of the most powerful empires in history, shaping law, language, engineering, and government systems.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>14th–17th Century – Renaissance Era</h3>
+      <p>Italy became the center of the Renaissance, producing famous artists such as Leonardo da Vinci and Michelangelo.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1861 – Unification of Italy</h3>
+      <p>Italy officially became a unified kingdom after centuries of division into independent states.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Modern Italy</h3>
+      <p>Today, Italy is one of the world’s most visited countries and an important member of the European Union.</p>
+    </div>
+  </div>
+</section>
+
+<section id="culture">
+  <h2>Major Cultural Features</h2>
+  <p class="section-intro">
+    Italian culture is admired worldwide because of its creativity, traditions, artistic beauty, and strong family values. Below are some of the major cultural features that define Italy.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop" alt="Italian Food">
+      <div class="card-content">
+        <h3>Food & Cuisine</h3>
+        <p>Italian cuisine is among the most popular in the world. Pizza, pasta, gelato, risotto, and espresso originated in Italy. Italians value fresh ingredients, family meals, and regional cooking traditions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200&auto=format&fit=crop" alt="Italian Fashion">
+      <div class="card-content">
+        <h3>Fashion & Clothing</h3>
+        <p>Italy is known as one of the fashion capitals of the world. Milan hosts international fashion shows and luxury brands such as Gucci, Prada, Armani, and Versace are Italian.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=1200&auto=format&fit=crop" alt="Festival">
+      <div class="card-content">
+        <h3>Festivals & Celebrations</h3>
+        <p>Italy celebrates many festivals such as Venice Carnival, Easter traditions, and religious feasts. Festivals showcase music, costumes, art, and local traditions.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?q=80&w=1200&auto=format&fit=crop" alt="Architecture">
+      <div class="card-content">
+        <h3>Architecture & Art</h3>
+        <p>Italy is home to Renaissance masterpieces, Roman ruins, cathedrals, sculptures, and paintings. The Colosseum, Florence Cathedral, and Vatican Museums are globally admired.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Language and Beliefs">
+      <div class="card-content">
+        <h3>Language, Religion & Values</h3>
+        <p>Italian is the official language, while Roman Catholicism greatly influences traditions and values. Family, respect, hospitality, and social connection are important parts of Italian culture.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop" alt="Tourism">
+      <div class="card-content">
+        <h3>Tourism & Lifestyle</h3>
+        <p>Millions of tourists visit Italy every year because of its history, beautiful cities, and culture. Italians are known for enjoying balanced lifestyles centered on food, art, and family.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="global">
+  <h2>Global Connections</h2>
+
+  <img class="banner" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1400&auto=format&fit=crop" alt="Global Italy">
+
+  <p class="section-intro">
+    Italy is deeply connected to the contemporary world through globalization, trade, tourism, fashion, technology, migration, and cultural influence. Italian culture has spread globally through food, cinema, art, luxury brands, and social media.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-content">
+        <h3>Cultural Diffusion</h3>
+        <p>Italian cuisine, architecture, fashion, and music influence many countries. Pizza and pasta became international symbols of cultural exchange.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Tourism & Economy</h3>
+        <p>Italy welcomes millions of international visitors every year, making tourism one of its strongest economic sectors and global connections.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Technology & Media</h3>
+        <p>Italian films, social media influencers, designers, and digital businesses contribute to global pop culture and international media industries.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Migration & Diaspora</h3>
+        <p>Many Italians migrated to countries such as the United States, Argentina, Canada, and Australia, spreading Italian traditions and customs worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="issues">
+  <h2>Contemporary Issues & Challenges</h2>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop" alt="Modernization">
+      <div class="card-content">
+        <h3>Traditional vs. Modern Lifestyles</h3>
+        <p>Globalization and modernization influence younger generations, causing some traditional customs and lifestyles to slowly disappear. Italy continues to balance innovation while preserving cultural heritage.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="Preservation">
+      <div class="card-content">
+        <h3>Cultural Preservation</h3>
+        <p>Historic buildings and ancient landmarks face threats from pollution, climate change, and mass tourism. Preservation efforts are important to protect Italy’s cultural treasures.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop" alt="Economy">
+      <div class="card-content">
+        <h3>Economic Challenges</h3>
+        <p>Italy experiences economic concerns such as unemployment, inflation, and regional inequalities between northern and southern areas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Migration">
+      <div class="card-content">
+        <h3>Immigration & Diversity</h3>
+        <p>Italy faces challenges regarding immigration, integration, and multiculturalism as people from different countries move to Italy for work and safety.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="reflection">
+  <h2>Personal Reflections</h2>
+
+  <div class="card-grid">
+
+    <div class="reflection">
+      <p>
+        Through this project, I learned that Italy is a country with a very rich culture and history that influenced many parts of the modern world. Before doing this activity, I only knew Italy because of pizza, pasta, and famous tourist spots. While researching, I discovered how important Italy became during the Roman Empire and Renaissance period. I also learned how Italian culture influenced art, fashion, architecture, and cuisine worldwide. This project helped me appreciate the importance of preserving traditions and cultural identity. It made me realize that culture is one of the strongest foundations of a nation. Overall, I gained a deeper understanding and appreciation for Italy and its people.
+      </p>
+    </div>
+
+    <div class="reflection">
+      <p>
+        This project deepened my understanding of globalization because I saw how connected Italy is to different countries around the world. Italian food, fashion brands, and artistic styles became popular globally because of cultural exchange and technology. I realized that globalization helps cultures spread and become appreciated internationally. At the same time, I also learned that globalization can create challenges in preserving traditional practices and local identity. Italy continues to balance modernization while protecting its cultural heritage. This made me understand that globalization has both positive and negative effects on society. It also showed me how countries influence one another in today’s contemporary world.
+      </p>
+    </div>
+
+    <div class="reflection">
+      <p>
+        Learning about Italian culture made me realize why cultural awareness is important in today’s world. Every country has unique traditions, beliefs, and values that deserve respect and appreciation. Understanding different cultures can help reduce stereotypes and discrimination among people. This project taught me to become more open-minded toward cultural differences and diversity. I also learned that respecting other cultures promotes unity and peace in society. Cultural awareness helps people communicate better and understand one another more deeply. Because of this activity, I became more interested in learning about other cultures around the world.
+      </p>
+    </div>
+
+    <div class="reflection">
+      <p>
+        As a student and future citizen, this project taught me many valuable lessons that I can apply in my daily life. I learned the importance of respecting cultural traditions and preserving history for future generations. Italy showed me how culture can shape national identity and influence people worldwide. I also realized that learning about other countries helps us become more informed and responsible global citizens. This activity improved my research, creativity, and critical thinking skills while creating the e-portfolio. It encouraged me to appreciate diversity and become more understanding toward others. Overall, this project became a meaningful learning experience for me.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="references">
+  <h2>References & Sources</h2>
+
+  <div class="references">
+
+    <h3>Research Sources</h3>
+    <ul>
+      <li><a href="https://www.britannica.com/place/Italy" target="_blank">Encyclopedia Britannica – Italy</a></li>
+      <li><a href="https://www.cia.gov/the-world-factbook/countries/italy/" target="_blank">CIA World Factbook – Italy</a></li>
+      <li><a href="https://www.nationalgeographic.com/travel/destination/italy" target="_blank">National Geographic – Italy Travel & Culture</a></li>
+      <li><a href="https://www.italia.it/en" target="_blank">Italia Official Tourism Website</a></li>
+      <li><a href="https://whc.unesco.org/en/statesparties/it" target="_blank">UNESCO World Heritage Centre – Italy</a></li>
+      <li><a href="https://kids.nationalgeographic.com/geography/countries/article/italy" target="_blank">National Geographic Kids – Italy Facts</a></li>
+      <li><a href="https://www.history.com/topics/italy" target="_blank">History.com – Italy History</a></li>
+      <li><a href="https://www.bbc.com/travel/destinations/europe/italy" target="_blank">BBC Travel – Italy</a></li>
+    </ul>
+
+    <br>
+
+    <h3>Image Sources</h3>
+    <ul>
+      <li><a href="https://unsplash.com" target="_blank">Unsplash</a></li>
+      <li><a href="https://pexels.com" target="_blank">Pexels</a></li>
+      <li><a href="https://pixabay.com" target="_blank">Pixabay</a></li>
+      <li><a href="https://commons.wikimedia.org" target="_blank">Wikimedia Commons</a></li>
+    </ul>
+
+    <br>
+
+    <h3>Additional References</h3>
+    <p>
+      Information and visuals used in this project were gathered from educational, tourism, and cultural websites related to Italy, globalization, and world heritage.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <h3 style="font-family:'Cinzel', serif; font-size:2rem; margin-bottom:15px; color:#f4d35e;">
+    Viva Italia 🇮🇹
+  </h3>
+  <p style="max-width:700px; margin:auto; line-height:1.9;">
+    A celebration of Italy’s culture, traditions, history, architecture, cuisine, and global influence in the contemporary world.
+  </p>
+  <br>
+  <p>
+    The Contemporary World • Digital Cultural e-Portfolio • 1272 Financial Management
+  </p>
+</footer>
+
+</body>
+</html>
